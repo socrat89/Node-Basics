@@ -33,6 +33,7 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+ var list = [['','1'],['','2'],['','3']];
 function onDataReceived(text) {
   
 
@@ -45,6 +46,9 @@ function onDataReceived(text) {
   }
   else if(text === "help\n"){
     help();
+  }
+  else if(text.startsWith("list")){
+    tasks(list);
   }
   else{
     unknownCommand(text);
@@ -88,7 +92,12 @@ function unknownCommand(c){
   text = text.trim(" ");
   console.log(text);
 
-
+ }
+ function tasks(list){
+  for(var i = 0; i < list.length; i++){
+    console.log(list[i]);
+  }
+}
 
 /**
  * Exits the application
