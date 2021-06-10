@@ -33,11 +33,9 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
- var list = [['','1'],['','2'],['','3']];
+ var list = ['1','2','3'];
 function onDataReceived(text) {
   
-
-
   if (text === 'quit\n'|| text === 'exit\n') {
     quit();
   }
@@ -47,9 +45,20 @@ function onDataReceived(text) {
   else if(text === "help\n"){
     help();
   }
+  
   else if(text.startsWith("list")){
     tasks(list);
   }
+  else if(text.trim()==="add"){
+    unknownCommand(text);
+  }
+  else if(text.startsWith("add")){
+    add(text);
+}
+else if(text === "remove\n"){
+  remove(text);
+}
+
   else{
     unknownCommand(text);
   }
@@ -98,6 +107,34 @@ function unknownCommand(c){
     console.log(list[i]);
   }
 }
+/**
+ * Adds a new task
+ *
+ * @returns {void}
+ */
+ function add(text){
+  // text = text.trim();
+  list.unshift(text.substring(4).trim());
+}
+
+/**
+ * Removes an existing task
+ *
+ * @returns {void}
+ */
+// function remove(text){
+//   text = text.trim();
+//   if(text.length == 6){
+//     list.pop();
+//   }
+//   else if(text.substring(7) >=list.length || text.substring(7)<0){
+//     console.log("task number doesn't exist");
+//   }
+//   else{
+//   list.splice(text.substring(7),1);
+// }
+// }
+
 
 /**
  * Exits the application
