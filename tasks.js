@@ -61,7 +61,7 @@ function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
 /**
- * Lists all the possible commands that are valid inside the app
+ * "help"command,  lists all the possible commands
  *
  * @returns {void}
  */
