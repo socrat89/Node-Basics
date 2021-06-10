@@ -72,7 +72,7 @@ function unknownCommand(c){
   console.log("\n");
   console.log(
   " ******** help command ********** \n"
-  +"hello - prints hello \n"
+  +"hello - hello command able to take an argument and adding !\n"
   +"help - lists all the possible commands\n"
   +"exit or quit - quits the application\n");
   }
