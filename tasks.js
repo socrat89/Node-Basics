@@ -220,7 +220,7 @@ function remove(text){
 function load(){
   const fs = require('fs');
 
-  let rawdata = fs.readFileSync(fileName);
+  let rawdata = fs.readFileSync("database.json");
   tasks = JSON.parse(rawdata);
 }
 
@@ -232,8 +232,8 @@ function load(){
 function quit(){
   // var x = JSON.stringify(list);
   fs = require('fs');
-  fs.writeFileSync(database.json, JSON.stringify(list));
-  console.log('Quitting now, goodbye!')
+  fs.writeFileSync("database.json", JSON.stringify(list));
+  console.log('Quitting now, goodbye!');
   process.exit();
 }
 
