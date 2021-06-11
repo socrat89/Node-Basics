@@ -33,11 +33,15 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
- var list = ['1','2','3'];
+//  var list = ['1','2','3'];
+var list = [['','1'],['','2'],['','3']];
 function onDataReceived(text) {
   
   if (text === 'quit\n'|| text === 'exit\n') {
     quit();
+  }
+  else if(text.startsWith("check")){
+    check(text);
   }
   else if(text === 'hello\n'|| text.startsWith("hello") || text.startsWith("hello\t")){
     hello(text);
@@ -91,6 +95,12 @@ else if(text.trim() === "remove"|| text.startsWith("remove") ){
     
   }else{unknownCommand(x)}
  }
+
+ function check(text){
+  text = text.split(" ");
+  console.log(list[0]);
+ list[0][0]= list[0][0].replace("",'✓') ;
+}
 /**
  * prints "unknown command"
  * This function is supposed to run when all other commands have failed
@@ -110,11 +120,12 @@ function unknownCommand(c){
   console.log("\n");
   console.log(
   " ******** help command ********** \n"
-  +"hello - hello command able to take an argument and adding !\n"
-  +"help - lists all the possible commands\n"
-  +"Add task to the list\n"
-  +"Remove task from the list that allows to remove\n"
-  +"exit or quit - quits the application\n");
+  +"1. hello - hello command able to take an argument and adding !\n"
+  +"2. help - lists all the possible commands\n"
+  +"3. Add task to the list\n"
+  +"4. Remove task from the list that allows to remove\n"
+  +"5. edit to change the content of the list"
+  +"6. exit or quit - quits the application\n");
   }
 
 
@@ -141,7 +152,9 @@ function unknownCommand(c){
  */
  function add(text){
   // text = text.trim();
+  console.log(list[0][1]);
   list.unshift(text.substring(4).trim());
+
 }
 
 /**
