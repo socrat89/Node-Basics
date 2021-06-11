@@ -12,6 +12,7 @@
 function startApp(name){
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
+  load();
   process.stdin.on('data', onDataReceived);
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
@@ -195,6 +196,17 @@ function remove(text){
 }
 }
 
+/**
+ * Load the database the application
+ *
+ * @returns {void}
+ */
+function load(){
+  const fs = require('fs');
+
+  let rawdata = fs.readFileSync(fileName);
+  tasks = JSON.parse(rawdata);
+}
 
 /**
  * Exits the application
@@ -202,6 +214,9 @@ function remove(text){
  * @returns {void}
  */
 function quit(){
+  // var x = JSON.stringify(list);
+  fs = require('fs');
+  fs.writeFileSync(database.json, JSON.stringify(list));
   console.log('Quitting now, goodbye!')
   process.exit();
 }
