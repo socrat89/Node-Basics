@@ -142,7 +142,9 @@ function unknownCommand(c){
   +"3. Add task to the list\n"
   +"4. Remove task from the list that allows to remove\n"
   +"5. edit to change the content of the list"
-  +"6. exit or quit - quits the application\n");
+  +"6. check any item on the list"
+  +"7. uncheck any item on the list"
+  +". exit or quit - quits the application\n");
   }
 
 
