@@ -73,8 +73,23 @@ else if(text.trim() === "remove"|| text.startsWith("remove") ){
  *
  * @returns {void}
  */
- function edit(text){
-
+ function edit(x){
+  
+  var x = x.replace("\n","");
+  var y=list.length-1;
+  var z= x.substring(5);
+  var b=z.substring(0,1);
+  if(isNaN(b))
+  {//its Not a Number
+     z=  z.split(" ");
+     list[y]=list[y].replace(list[y],z);
+  }else if(b<=y)
+  {
+    x=x.substring(7);
+    list[b]=list[b].replace(list[b],x);
+  
+    
+  }else{unknownCommand(x)}
  }
 /**
  * prints "unknown command"
