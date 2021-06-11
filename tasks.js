@@ -110,11 +110,10 @@ else if(text.trim() === "remove"|| text.startsWith("remove") ){
   var x = text.replace("\n","");
   var y=list.length-1;
   var z= x.substring(6);
-  console.log(z);
   //
   if (z<=y){  
-  console.log(list[z]);
-  console.log(list[z][0]);
+  // console.log(list[z]);
+  // console.log(list[z][0]);
  list[z][0]= list[z][0].replace("",'✓') ;
 }else {unknownCommand(x)}
  } 
@@ -126,8 +125,15 @@ else if(text.trim() === "remove"|| text.startsWith("remove") ){
  * @returns {void}
  */
  function uncheck(text){
+  var x = text.replace("\n","");
+  var y=list.length-1;
+  var z= x.substring(8);
+  console.log(z);
+  //
+  if (z<=y){  
   text = text.split(" ");
-  list[0][0]= list[0][0].replace('✓',"") ;
+  list[z][0]= list[z][0].replace('✓',"") ;
+  }else {unknownCommand(x)}
 }
 /**
  * prints "unknown command"
