@@ -12,7 +12,9 @@
 function startApp(name){
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
+  try{
   load();
+  }catch{console.log("the file cann't be loaded")}
   process.stdin.on('data', onDataReceived);
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
