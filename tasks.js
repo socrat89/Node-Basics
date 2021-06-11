@@ -49,7 +49,7 @@ function onDataReceived(text) {
   else if(text.startsWith("list")){
     tasks(list);
   }
-  else if(text.trim()==="add"){
+  else if(text.trim()==="add"||text.trim()==="edit"){
     unknownCommand(text);
   }
   else if(text.startsWith("add")){
@@ -58,6 +58,9 @@ function onDataReceived(text) {
 else if(text.trim() === "remove"|| text.startsWith("remove") ){
   remove(text);
 }
+ else if(text.startsWith("edit")){
+    edit(text);
+  }
 
   else{
     unknownCommand(text);
@@ -65,7 +68,14 @@ else if(text.trim() === "remove"|| text.startsWith("remove") ){
   
 }
 
+/**
+ * Edits the task
+ *
+ * @returns {void}
+ */
+ function edit(text){
 
+ }
 /**
  * prints "unknown command"
  * This function is supposed to run when all other commands have failed
