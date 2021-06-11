@@ -128,9 +128,10 @@ function remove(text){
   text = text.trim();
   if(text.length == 6){
     list.shift();
-  }else if(text.substring(7) >=list.length){
+  }
+  else if(text.substring(7) >=list.length){
     console.log(text.substring(7));
-    console.log("error task number dose not exsit");
+    console.log("error task number dose not exsit in the list");
   }
   else{
   list.splice(text.substring(7),1);
