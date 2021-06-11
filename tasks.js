@@ -107,10 +107,18 @@ else if(text.trim() === "remove"|| text.startsWith("remove") ){
  * @returns {void}
  */
  function check(text){
-  text = text.split(" ");
-  console.log(list[0]);
- list[0][0]= list[0][0].replace("",'✓') ;
-}
+  var x = text.replace("\n","");
+  var y=list.length-1;
+  var z= x.substring(6);
+  console.log(z);
+  //
+  if (z<=y){  
+  console.log(list[z]);
+  console.log(list[z][0]);
+ list[z][0]= list[z][0].replace("",'✓') ;
+}else {unknownCommand(x)}
+ } 
+
 
 /**
  * uncheck the task
@@ -174,7 +182,7 @@ function unknownCommand(c){
  */
  function add(text){
   // text = text.trim();
-  console.log(list[0][1]);
+  // console.log(list[0][1]);
   list.unshift(text.substring(4).trim());
 
 }
