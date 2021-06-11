@@ -55,7 +55,7 @@ function onDataReceived(text) {
   else if(text.startsWith("add")){
     add(text);
 }
-else if(text === "remove\n"){
+else if(text.trim() === "remove"|| text.startsWith("remove") ){
   remove(text);
 }
 
@@ -122,18 +122,18 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-// function remove(text){
-//   text = text.trim();
-//   if(text.length == 6){
-//     list.pop();
-//   }
-//   else if(text.substring(7) >=list.length || text.substring(7)<0){
-//     console.log("task number doesn't exist");
-//   }
-//   else{
-//   list.splice(text.substring(7),1);
-// }
-// }
+function remove(text){
+  text = text.trim();
+  if(text.length == 6){
+    list.shift();
+  }else if(text.substring(7) >=list.length){
+    console.log(text.substring(7));
+    console.log("error task number dose not exsit");
+  }
+  else{
+  list.splice(text.substring(7),1);
+}
+}
 
 
 /**
