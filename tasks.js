@@ -34,7 +34,7 @@ function startApp(name){
  * @returns {void}
  */
 //  var list = ['1','2','3'];
-var list = [['','1'],['','2'],['','3']];
+var list = [['✓','1'],['','2'],['','3']];
 function onDataReceived(text) {
   
   if (text === 'quit\n'|| text === 'exit\n') {
@@ -42,6 +42,9 @@ function onDataReceived(text) {
   }
   else if(text.startsWith("check")){
     check(text);
+  }
+  else if(text.startsWith("uncheck")){
+    uncheck(text);
   }
   else if(text === 'hello\n'|| text.startsWith("hello") || text.startsWith("hello\t")){
     hello(text);
@@ -95,11 +98,25 @@ else if(text.trim() === "remove"|| text.startsWith("remove") ){
     
   }else{unknownCommand(x)}
  }
-
+/**
+ * check the task
+ *
+ * @returns {void}
+ */
  function check(text){
   text = text.split(" ");
   console.log(list[0]);
  list[0][0]= list[0][0].replace("",'✓') ;
+}
+
+/**
+ * uncheck the task
+ *
+ * @returns {void}
+ */
+ function uncheck(text){
+  text = text.split(" ");
+  list[0][0]= list[0][0].replace('✓',"") ;
 }
 /**
  * prints "unknown command"
