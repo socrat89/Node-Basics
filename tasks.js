@@ -87,6 +87,8 @@ function unknownCommand(c){
   " ******** help command ********** \n"
   +"hello - hello command able to take an argument and adding !\n"
   +"help - lists all the possible commands\n"
+  +"Add task to the list\n"
+  +"Remove task from the list that allows to remove\n"
   +"exit or quit - quits the application\n");
   }
 
