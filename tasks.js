@@ -57,7 +57,7 @@ function onDataReceived(text) {
   }
   
   else if(text.startsWith("list")){
-    tasks(list);
+    t();
   }
   else if(text.trim()==="add"||text.trim()==="edit"){
     unknownCommand(text);
@@ -176,7 +176,7 @@ function unknownCommand(c){
   console.log(text);
 
  }
- function tasks(list){
+ function t(){
   for(var i = 0; i < list.length; i++){
     console.log(list[i]);
   }
